@@ -10,6 +10,7 @@
 		403AEB8928A7C4E100BF7C54 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403AEB8828A7C4E100BF7C54 /* LearnViewController.swift */; };
 		403AEB8B28A7D59700BF7C54 /* CoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403AEB8A28A7D59700BF7C54 /* CoiceViewController.swift */; };
 		403AEB8D28A7E08D00BF7C54 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403AEB8C28A7E08D00BF7C54 /* QuizViewController.swift */; };
+		408FC1E828A844FA0076A307 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC1E728A844FA0076A307 /* FavoritesViewController.swift */; };
 		40DBEE4628A7B164007055A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBEE4528A7B164007055A2 /* AppDelegate.swift */; };
 		40DBEE4828A7B164007055A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBEE4728A7B164007055A2 /* SceneDelegate.swift */; };
 		40DBEE4A28A7B164007055A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBEE4928A7B164007055A2 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		403AEB8828A7C4E100BF7C54 /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		403AEB8A28A7D59700BF7C54 /* CoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoiceViewController.swift; sourceTree = "<group>"; };
 		403AEB8C28A7E08D00BF7C54 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		408FC1E728A844FA0076A307 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		40DBEE4228A7B164007055A2 /* LearnKeywords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnKeywords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DBEE4528A7B164007055A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40DBEE4728A7B164007055A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				403AEB8A28A7D59700BF7C54 /* CoiceViewController.swift */,
 				403AEB8828A7C4E100BF7C54 /* LearnViewController.swift */,
 				403AEB8C28A7E08D00BF7C54 /* QuizViewController.swift */,
+				408FC1E728A844FA0076A307 /* FavoritesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				40DBEE4628A7B164007055A2 /* AppDelegate.swift in Sources */,
 				403AEB8D28A7E08D00BF7C54 /* QuizViewController.swift in Sources */,
 				403AEB8B28A7D59700BF7C54 /* CoiceViewController.swift in Sources */,
+				408FC1E828A844FA0076A307 /* FavoritesViewController.swift in Sources */,
 				40DBEE4828A7B164007055A2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

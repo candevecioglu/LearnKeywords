@@ -9,8 +9,9 @@ import Foundation
 
 struct KeywordBrain {
     
-    let keywordNumber = 0
-    let score = 0
+    var selectedCategoryKeywords : Array<Keyword> = []
+    var keywordNumber = 0
+    var score = 0
     let categoryArray = ["✈️ Havacılık", "💸 Bankacılık", "💻 Bilişim"]
     
     let allKeywordsArray = [
@@ -49,5 +50,38 @@ struct KeywordBrain {
         Keyword(ct: "💻 Bilişim", en: "Downgrade", wa: ["Güncelleme", "Silme", "Yükleme"], tr: "Düşürme"),
 
     ]
+    
+    
+    func getQuestionText() -> String {
+        return selectedCategoryKeywords[keywordNumber].englishKeyword
+    }
+    
+    //Need a way of fetching the answer choices.
+    func getAnswers() -> [String] {
+        return selectedCategoryKeywords[keywordNumber].wrongAnswers
+    }
+    
+    mutating func getScore() -> Int {
+        return score
+    }
+    
+     mutating func nextQuestion() {
+        
+        if keywordNumber + 1 < selectedCategoryKeywords.count {
+            keywordNumber += 1
+        } else {
+            keywordNumber = 0
+        }
+    }
+    
+    mutating func checkAnswer(userAnswer: String) -> Bool {
+        //Need to change answer to rightAnswer here.
+        if userAnswer == selectedCategoryKeywords[keywordNumber].turkishKeyword {
+            score += 1
+            return true
+        } else {
+            return false
+        }
+    }
     
 }
