@@ -12,7 +12,18 @@ struct KeywordBrain {
     var selectedCategoryKeywords : Array<Keyword> = []
     var keywordNumber = 0
     var score = 0
-    let categoryArray = ["✈️ Havacılık", "💸 Bankacılık", "💻 Bilişim"]
+    let categoryArray = ["❤️ Favori Kelimelerin",
+                         "✈️ Havacılık",
+                         "💸 Bankacılık",
+                         "💻 Bilişim" ,
+                         "🌤 Hava Durumu",
+                         "🌍 Coğrafya",
+                         "🌿 Doğa",
+                         "🐶 Hayvanlar",
+                         "👨🏻‍🍳 Mutfak",
+                         "👩🏼‍🏫 Eğitim",
+                         "🪖 Askeriye",
+                         "🚑 Sağlık"]
     
     let allKeywordsArray = [
         
@@ -48,6 +59,8 @@ struct KeywordBrain {
         Keyword(ct: "💻 Bilişim", en: "Source", wa: ["Kopyalama", "Yapıştırma", "Kesme"], tr: "Kaynak"),
         Keyword(ct: "💻 Bilişim", en: "Update", wa: ["İndirme", "Geri", "İleri"], tr: "Güncelleme"),
         Keyword(ct: "💻 Bilişim", en: "Downgrade", wa: ["Güncelleme", "Silme", "Yükleme"], tr: "Düşürme"),
+        
+        
 
     ]
     

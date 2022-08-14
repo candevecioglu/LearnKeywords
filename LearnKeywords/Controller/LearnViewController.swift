@@ -21,6 +21,7 @@ class LearnViewController: UIViewController {
     @IBOutlet weak var nextButtonLabel: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
     
+    @IBOutlet weak var goToMainPage: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Learn Keywords"
@@ -32,7 +33,7 @@ class LearnViewController: UIViewController {
                 selectedCategoryKeywords.append(ugur)
             }
         }
-        
+        goToMainPage.isHidden = true
         updateUI()
         
         }
@@ -52,7 +53,12 @@ class LearnViewController: UIViewController {
             let barLoading = selectedCategoryKeywords.count - 1
             progressBar.progress = Float(keywordNumber) / Float(barLoading)
         } else {
-            nextButtonLabel.isEnabled = false
+            englishLabel.isHidden = true
+            turkishLabel.isHidden = true
+            progressBar.isHidden = true
+            nextButtonLabel.isHidden = true
+            backButtonLabel.isHidden = true
+            goToMainPage.isHidden = false
         }
         
         

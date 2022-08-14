@@ -23,7 +23,9 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var answer2Label: UIButton!
     @IBOutlet weak var answer3Label: UIButton!
     @IBOutlet weak var answer4Label: UIButton!
+    @IBOutlet weak var progressBar: UIProgressView!
     
+    @IBOutlet weak var goToMainPage: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,7 @@ class QuizViewController: UIViewController {
         }
         
         updateUI()
+        goToMainPage.isHidden = true
     }
     
     func updateUI () {
@@ -64,15 +67,42 @@ class QuizViewController: UIViewController {
     @IBAction func answerClicked(_ sender: UIButton) {
         
         let userAnswer = sender.currentTitle!
+        
         if userAnswer == selectedCategoryKeywords[keywordNumber].turkishKeyword {
+            alert(title: "Correct!", message: "Answer is correct!")
+            
+            if keywordNumber + 1 < selectedCategoryKeywords.count {
+                keywordNumber += 1
+                let barLoading = selectedCategoryKeywords.count - 1
+                progressBar.progress = Float(keywordNumber) / Float(barLoading)
+                answerArray.removeAll()
+                updateUI()
+            } else {
+                goToMainPage.isHidden = false
+                englishLabel.isHidden = true
+                answer1Label.isHidden = true
+                answer2Label.isHidden = true
+                answer3Label.isHidden = true
+                answer4Label.isHidden = true
+                progressBar.isHidden = true
+            }
+        } else {
+            alert(title: "Wrong!", message: "Answer is wrong!")
             keywordNumber += 1
             let barLoading = selectedCategoryKeywords.count - 1
-
+            progressBar.progress = Float(keywordNumber) / Float(barLoading)
             answerArray.removeAll()
             updateUI()
         }
         
         
+    }
+    
+    func alert (title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in }
+             alert.addAction(okButton)
+             self.present(alert, animated: true, completion: nil)
     }
 
 
