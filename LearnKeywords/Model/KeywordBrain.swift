@@ -51,6 +51,14 @@ struct KeywordBrain {
 
     ]
     
+    mutating func checkAnswer (_ userAnswer : String) -> Bool {
+        if userAnswer == selectedCategoryKeywords[keywordNumber].turkishKeyword {
+            score += 1
+            return true
+        } else {
+            return false
+        }
+    }
     
     func getQuestionText() -> String {
         return selectedCategoryKeywords[keywordNumber].englishKeyword
