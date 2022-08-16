@@ -9,7 +9,8 @@ import Foundation
 
 struct KeywordBrain {
     
-    var selectedCategoryKeywords : Array<Keyword> = []
+    var selectedCategoryKeywords = Array<Keyword>()
+    var selectedCategory = ""
     var keywordNumber = 0
     var score = 0
     let categoryArray = ["❤️ Favori Kelimelerin",
@@ -25,9 +26,9 @@ struct KeywordBrain {
                          "🪖 Askeriye",
                          "🚑 Sağlık"]
     
-    let allKeywordsArray = [
+    var allKeywordsArray = [
         
-        Keyword(ct: "✈️ Havacılık", en: "Plane", wa: ["Tren", "Karavan", "Planör"], tr: "Uçak"),
+        Keyword(ct: "✈️ Havacılık", en: "Plane", wa: ["Elif", "Karavan", "Planör"], tr: "Uçak"),
         Keyword(ct: "✈️ Havacılık", en: "Wing", wa: ["Motor", "Sürtünme", "Kuyruk"], tr: "Kanat"),
         Keyword(ct: "✈️ Havacılık", en: "Elevator", wa: ["Asansör", "Kuyruk", "Dikme"], tr: "Kanatçık"),
         Keyword(ct: "✈️ Havacılık", en: "Engine", wa: ["Piston", "Masa", "Kahvaltı"], tr: "Motor"),
@@ -58,10 +59,8 @@ struct KeywordBrain {
         Keyword(ct: "💻 Bilişim", en: "Bandwith", wa: ["Uzunluk", "Hız", "Güncelleme"], tr: "Bant genişliği"),
         Keyword(ct: "💻 Bilişim", en: "Source", wa: ["Kopyalama", "Yapıştırma", "Kesme"], tr: "Kaynak"),
         Keyword(ct: "💻 Bilişim", en: "Update", wa: ["İndirme", "Geri", "İleri"], tr: "Güncelleme"),
-        Keyword(ct: "💻 Bilişim", en: "Downgrade", wa: ["Güncelleme", "Silme", "Yükleme"], tr: "Düşürme"),
+        Keyword(ct: "💻 Bilişim", en: "Downgrade", wa: ["Güncelleme", "Silme", "Yükleme"], tr: "Düşürme")
         
-        
-
     ]
     
     mutating func checkAnswer (_ userAnswer : String) -> Bool {
@@ -90,19 +89,35 @@ struct KeywordBrain {
         
         if keywordNumber + 1 < selectedCategoryKeywords.count {
             keywordNumber += 1
+            print(keywordNumber)
         } else {
             keywordNumber = 0
         }
+         
     }
     
     mutating func checkAnswer(userAnswer: String) -> Bool {
         //Need to change answer to rightAnswer here.
         if userAnswer == selectedCategoryKeywords[keywordNumber].turkishKeyword {
             score += 1
+            print(selectedCategoryKeywords.count)
+            print(keywordNumber)
             return true
         } else {
             return false
         }
+    }
+    
+    mutating func selectCategory () {
+        
+        for selection in allKeywordsArray {
+            if selection.category == selectedCategory {
+                selectedCategoryKeywords.append(selection)
+            }
+        }
+        
+        print(selectedCategoryKeywords)
+        print("eee")
     }
     
 }

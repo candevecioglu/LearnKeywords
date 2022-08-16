@@ -9,9 +9,8 @@ import UIKit
 
 class LearnViewController: UIViewController {
     
-    var choosenCategory = ""
-    let keywordBrain = KeywordBrain()
-    var selectedCategoryKeywords : Array<Keyword> = []
+    var choosenCategory = String()
+    var keywordBrain = KeywordBrain()
     var keywordNumber = 0
 
     @IBOutlet weak var categoryNameLabel: UILabel!
@@ -24,33 +23,31 @@ class LearnViewController: UIViewController {
     @IBOutlet weak var goToMainPage: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        goToMainPage.isHidden = true
         self.title = "Learn Keywords"
         categoryNameLabel.text = choosenCategory
         
-        // 13.08.2022
-        for ugur in keywordBrain.allKeywordsArray {
-            if ugur.category == choosenCategory {
-                selectedCategoryKeywords.append(ugur)
-            }
-        }
-        goToMainPage.isHidden = true
+        
         updateUI()
         
         }
     
     func updateUI () {
-        englishLabel.text = selectedCategoryKeywords[keywordNumber].englishKeyword
-        turkishLabel.text = selectedCategoryKeywords[keywordNumber].turkishKeyword
+        keywordBrain.selectCategory()
+        englishLabel.text = keywordBrain.selectedCategoryKeywords[keywordNumber].englishKeyword
+        turkishLabel.text = keywordBrain.selectedCategoryKeywords[keywordNumber].turkishKeyword
         
     }
     
+    //MARK: - Next and Back buttons
+    
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         
-        if keywordNumber + 1 < selectedCategoryKeywords.count {
+        if keywordNumber + 1 < keywordBrain.selectedCategoryKeywords.count {
             keywordNumber += 1
-            englishLabel.text = selectedCategoryKeywords[keywordNumber].englishKeyword
-            turkishLabel.text = selectedCategoryKeywords[keywordNumber].turkishKeyword
-            let barLoading = selectedCategoryKeywords.count - 1
+            englishLabel.text = keywordBrain.selectedCategoryKeywords[keywordNumber].englishKeyword
+            turkishLabel.text = keywordBrain.selectedCategoryKeywords[keywordNumber].turkishKeyword
+            let barLoading = keywordBrain.selectedCategoryKeywords.count - 1
             progressBar.progress = Float(keywordNumber) / Float(barLoading)
         } else {
             englishLabel.isHidden = true
@@ -70,15 +67,22 @@ class LearnViewController: UIViewController {
             performSegue(withIdentifier: "goToChoice", sender: nil)
         } else {
             keywordNumber -= 1
-            englishLabel.text = selectedCategoryKeywords[keywordNumber].englishKeyword
-            turkishLabel.text = selectedCategoryKeywords[keywordNumber].turkishKeyword
-            let barLoading = selectedCategoryKeywords.count - 1
+            englishLabel.text = keywordBrain.selectedCategoryKeywords[keywordNumber].englishKeyword
+            turkishLabel.text = keywordBrain.selectedCategoryKeywords[keywordNumber].turkishKeyword
+            let barLoading = keywordBrain.selectedCategoryKeywords.count - 1
             progressBar.progress = Float(keywordNumber) / Float(barLoading)
 
         }
         
         
     }
+    
+
+}
+
+//MARK: - Navigation
+
+extension LearnViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToChoice" {

@@ -11,14 +11,12 @@ class QuizViewController: UIViewController {
     
     var choosenCategory = ""
     var keywordBrain = KeywordBrain()
-    var selectedCategoryKeywords : Array<Keyword> = []
     var keywordNumber = 0
     var answerArray : Array<String> = []
     var score = 0
 
     @IBOutlet weak var englishLabel: UILabel!
     @IBOutlet weak var selectedCategoryKeywordLabel: UILabel!
-    
     @IBOutlet weak var answer1Label: UIButton!
     @IBOutlet weak var answer2Label: UIButton!
     @IBOutlet weak var answer3Label: UIButton!
@@ -31,31 +29,21 @@ class QuizViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Quiz Keywords"
         selectedCategoryKeywordLabel.text = choosenCategory
-        
-        func sendCategory () -> String {
-            return choosenCategory
-        }
-        
-        for ugur in keywordBrain.allKeywordsArray {
-            if ugur.category == choosenCategory {
-                selectedCategoryKeywords.append(ugur)
-            }
-        }
-        
+                
         updateUI()
         goToMainPage.isHidden = true
     }
     
     func updateUI () {
         
-        answerArray = [selectedCategoryKeywords[keywordNumber].turkishKeyword,
-                           selectedCategoryKeywords[keywordNumber].wrongAnswers[0],
-                           selectedCategoryKeywords[keywordNumber].wrongAnswers[1],
-                           selectedCategoryKeywords[keywordNumber].wrongAnswers[2]]
+        answerArray = [keywordBrain.selectedCategoryKeywords[keywordNumber].turkishKeyword,
+                       keywordBrain.selectedCategoryKeywords[keywordNumber].wrongAnswers[0],
+                       keywordBrain.selectedCategoryKeywords[keywordNumber].wrongAnswers[1],
+                       keywordBrain.selectedCategoryKeywords[keywordNumber].wrongAnswers[2]]
          answerArray.shuffle()
         
         
-        englishLabel.text = selectedCategoryKeywords[keywordNumber].englishKeyword
+        englishLabel.text = keywordBrain.selectedCategoryKeywords[keywordNumber].englishKeyword
         answer1Label.setTitle(answerArray[0], for: .normal)
         answer2Label.setTitle(answerArray[1], for: .normal)
         answer3Label.setTitle(answerArray[2], for: .normal)
@@ -68,12 +56,12 @@ class QuizViewController: UIViewController {
         
         let userAnswer = sender.currentTitle!
         
-        if userAnswer == selectedCategoryKeywords[keywordNumber].turkishKeyword {
+        if userAnswer == keywordBrain.selectedCategoryKeywords[keywordNumber].turkishKeyword {
             alert(title: "Correct!", message: "Answer is correct!")
             
-            if keywordNumber + 1 < selectedCategoryKeywords.count {
+            if keywordNumber + 1 < keywordBrain.selectedCategoryKeywords.count {
                 keywordNumber += 1
-                let barLoading = selectedCategoryKeywords.count - 1
+                let barLoading = keywordBrain.selectedCategoryKeywords.count - 1
                 progressBar.progress = Float(keywordNumber) / Float(barLoading)
                 answerArray.removeAll()
                 updateUI()
@@ -89,7 +77,7 @@ class QuizViewController: UIViewController {
         } else {
             alert(title: "Wrong!", message: "Answer is wrong!")
             keywordNumber += 1
-            let barLoading = selectedCategoryKeywords.count - 1
+            let barLoading = keywordBrain.selectedCategoryKeywords.count - 1
             progressBar.progress = Float(keywordNumber) / Float(barLoading)
             answerArray.removeAll()
             updateUI()

@@ -8,9 +8,8 @@
 import UIKit
 
 class CoiceViewController: UIViewController {
-    
-    var choosenCategory = ""
-    let keywordBrain = KeywordBrain()
+    var choosenCategory = String()
+    var keywordBrain = KeywordBrain()
     
     @IBOutlet weak var chosenCategoryChoiseLabel: UILabel!
     
@@ -18,22 +17,39 @@ class CoiceViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Learn or Quiz"
         chosenCategoryChoiseLabel.text = choosenCategory
+        
+
+            
+            for selection in keywordBrain.allKeywordsArray {
+                if selection.category == keywordBrain.selectedCategory {
+                    keywordBrain.selectedCategoryKeywords.append(selection)
+                }
+            }
+            
+            print(keywordBrain.selectedCategoryKeywords)
+            print("eee")
+        
+        
+        keywordBrain.selectCategory()
+
     }
     
- 
+    // MARK: - Buttons
+    
     @IBAction func learnButtonPressed(_ sender: UIButton) {
-        
         performSegue(withIdentifier: "goToLearn", sender: nil)
-        
     }
-    
     
     @IBAction func quizButtonPressed(_ sender: UIButton) {
-        
         performSegue(withIdentifier: "goToQuiz", sender: nil)
-        
     }
     
+}
+    
+    // MARK: - Navigation
+    
+    extension CoiceViewController {
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToLearn" {
             let destinationVC = segue.destination as! LearnViewController
@@ -46,16 +62,5 @@ class CoiceViewController: UIViewController {
         }
         
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

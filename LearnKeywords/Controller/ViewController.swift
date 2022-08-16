@@ -7,10 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController {
     
-    let keywordBrain = KeywordBrain()
-    var selectedCategory = ""
+    var keywordBrain = KeywordBrain()
 
     @IBOutlet weak var categoryTableView: UITableView!
     
@@ -19,8 +18,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         categoryTableView.delegate = self
         categoryTableView.dataSource = self
+        
         self.title = "All Categories"
         
+    }
+
+}
+
+//MARK: - UITableView methods
+
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        keywordBrain.selectedCategory = keywordBrain.categoryArray[indexPath.row]
+        performSegue(withIdentifier: "goToChoice", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,18 +44,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+}
+
+//MARK: - Navigation
+
+extension ViewController {
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToChoice" {
             let destinationVC = segue.destination as! CoiceViewController
-            destinationVC.choosenCategory = selectedCategory
+            destinationVC.choosenCategory = keywordBrain.selectedCategory
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedCategory = keywordBrain.categoryArray[indexPath.row]
-        performSegue(withIdentifier: "goToChoice", sender: nil)
-    }
-
-
 }
 
