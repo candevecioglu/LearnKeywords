@@ -10,21 +10,14 @@ import Foundation
 struct KeywordBrain {
     
     var selectedCategoryKeywords = Array<Keyword>()
-    var selectedCategory = ""
+    var selectedCategory = String()
     var keywordNumber = 0
     var score = 0
     let categoryArray = ["❤️ Favori Kelimelerin",
                          "✈️ Havacılık",
                          "💸 Bankacılık",
-                         "💻 Bilişim" ,
-                         "🌤 Hava Durumu",
-                         "🌍 Coğrafya",
-                         "🌿 Doğa",
-                         "🐶 Hayvanlar",
-                         "👨🏻‍🍳 Mutfak",
-                         "👩🏼‍🏫 Eğitim",
-                         "🪖 Askeriye",
-                         "🚑 Sağlık"]
+                         "💻 Bilişim"
+    ]
     
     var allKeywordsArray = [
         
@@ -106,18 +99,6 @@ struct KeywordBrain {
         } else {
             return false
         }
-    }
-    
-    mutating func selectCategory () {
-        
-        for selection in allKeywordsArray {
-            if selection.category == selectedCategory {
-                selectedCategoryKeywords.append(selection)
-            }
-        }
-        
-        print(selectedCategoryKeywords)
-        print("eee")
     }
     
 }

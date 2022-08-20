@@ -33,7 +33,6 @@ class LearnViewController: UIViewController {
         }
     
     func updateUI () {
-        keywordBrain.selectCategory()
         englishLabel.text = keywordBrain.selectedCategoryKeywords[keywordNumber].englishKeyword
         turkishLabel.text = keywordBrain.selectedCategoryKeywords[keywordNumber].turkishKeyword
         

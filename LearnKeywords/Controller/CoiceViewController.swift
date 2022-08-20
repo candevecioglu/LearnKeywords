@@ -19,18 +19,14 @@ class CoiceViewController: UIViewController {
         chosenCategoryChoiseLabel.text = choosenCategory
         
 
-            
-            for selection in keywordBrain.allKeywordsArray {
-                if selection.category == keywordBrain.selectedCategory {
-                    keywordBrain.selectedCategoryKeywords.append(selection)
-                }
+        for selection in keywordBrain.allKeywordsArray {
+            if selection.category == keywordBrain.selectedCategory {
+                keywordBrain.selectedCategoryKeywords.append(selection)
             }
+        }
+
             
-            print(keywordBrain.selectedCategoryKeywords)
-            print("eee")
-        
-        
-        keywordBrain.selectCategory()
+            print(choosenCategory)
 
     }
     
