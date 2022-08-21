@@ -12,6 +12,7 @@ class LearnViewController: UIViewController {
     var choosenCategory = String()
     var keywordBrain = KeywordBrain()
     var keywordNumber = 0
+    var selectedCategoryForLearnKeywords = Array<Keyword>()
 
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var englishLabel: UILabel!
@@ -27,14 +28,14 @@ class LearnViewController: UIViewController {
         self.title = "Learn Keywords"
         categoryNameLabel.text = choosenCategory
         
-        
         updateUI()
         
         }
     
     func updateUI () {
-        englishLabel.text = keywordBrain.selectedCategoryKeywords[keywordNumber].englishKeyword
-        turkishLabel.text = keywordBrain.selectedCategoryKeywords[keywordNumber].turkishKeyword
+        
+        englishLabel.text = selectedCategoryForLearnKeywords[keywordNumber].englishKeyword
+        turkishLabel.text = selectedCategoryForLearnKeywords[keywordNumber].turkishKeyword
         
     }
     
@@ -42,11 +43,11 @@ class LearnViewController: UIViewController {
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         
-        if keywordNumber + 1 < keywordBrain.selectedCategoryKeywords.count {
+        if keywordNumber + 1 < selectedCategoryForLearnKeywords.count {
             keywordNumber += 1
-            englishLabel.text = keywordBrain.selectedCategoryKeywords[keywordNumber].englishKeyword
-            turkishLabel.text = keywordBrain.selectedCategoryKeywords[keywordNumber].turkishKeyword
-            let barLoading = keywordBrain.selectedCategoryKeywords.count - 1
+            englishLabel.text = selectedCategoryForLearnKeywords[keywordNumber].englishKeyword
+            turkishLabel.text = selectedCategoryForLearnKeywords[keywordNumber].turkishKeyword
+            let barLoading = selectedCategoryForLearnKeywords.count - 1
             progressBar.progress = Float(keywordNumber) / Float(barLoading)
         } else {
             englishLabel.isHidden = true
@@ -66,9 +67,9 @@ class LearnViewController: UIViewController {
             performSegue(withIdentifier: "goToChoice", sender: nil)
         } else {
             keywordNumber -= 1
-            englishLabel.text = keywordBrain.selectedCategoryKeywords[keywordNumber].englishKeyword
-            turkishLabel.text = keywordBrain.selectedCategoryKeywords[keywordNumber].turkishKeyword
-            let barLoading = keywordBrain.selectedCategoryKeywords.count - 1
+            englishLabel.text = selectedCategoryForLearnKeywords[keywordNumber].englishKeyword
+            turkishLabel.text = selectedCategoryForLearnKeywords[keywordNumber].turkishKeyword
+            let barLoading = selectedCategoryForLearnKeywords.count - 1
             progressBar.progress = Float(keywordNumber) / Float(barLoading)
 
         }

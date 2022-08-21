@@ -7,14 +7,16 @@
 
 import Foundation
 
-struct Keyword {
+struct Keyword: Codable {
     
     let category       : String
     let englishKeyword : String
     let wrongAnswers   : [String]
     let turkishKeyword : String
+    #warning("I need UUID for Keyword objects")
+    //let identifier     : UUID
     
-    //The initialiser needs to be updated to match the new multiple choice quiz data.
+
     init(ct: String, en: String, wa: [String], tr: String) {
         category        = ct
         englishKeyword  = en

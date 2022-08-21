@@ -18,15 +18,12 @@ class CoiceViewController: UIViewController {
         self.title = "Learn or Quiz"
         chosenCategoryChoiseLabel.text = choosenCategory
         
-
         for selection in keywordBrain.allKeywordsArray {
-            if selection.category == keywordBrain.selectedCategory {
+            if selection.category == choosenCategory {
                 keywordBrain.selectedCategoryKeywords.append(selection)
             }
         }
-
-            
-            print(choosenCategory)
+        
 
     }
     
@@ -50,11 +47,13 @@ class CoiceViewController: UIViewController {
         if segue.identifier == "goToLearn" {
             let destinationVC = segue.destination as! LearnViewController
             destinationVC.choosenCategory = choosenCategory
+            destinationVC.selectedCategoryForLearnKeywords = keywordBrain.selectedCategoryKeywords
         }
         
         if segue.identifier == "goToQuiz" {
             let destinationVC = segue.destination as! QuizViewController
             destinationVC.choosenCategory = choosenCategory
+            destinationVC.selectedCategoryForQuizKeywords = keywordBrain.selectedCategoryKeywords
         }
         
     }

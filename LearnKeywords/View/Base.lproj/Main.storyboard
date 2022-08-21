@@ -44,6 +44,7 @@
                     <connections>
                         <outlet property="categoryTableView" destination="Urf-gE-chS" id="JWO-7l-6sq"/>
                         <segue destination="LAh-Ea-fOi" kind="show" identifier="goToChoice" id="tfu-cQ-Zke"/>
+                        <segue destination="vKt-Or-3z4" kind="show" identifier="goToFavorites" id="mV0-34-kjs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -325,6 +326,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AEb-uJ-AW9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2198.5507246376815" y="36.830357142857139"/>
+        </scene>
+        <!--Favorites View Controller-->
+        <scene sceneID="Ius-1B-8GW">
+            <objects>
+                <viewController id="vKt-Or-3z4" customClass="FavoritesViewController" customModule="LearnKeywords" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4fq-tv-UHE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="txT-98-Hoh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="798"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hdD-Oa-BRf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hdD-Oa-BRf" firstAttribute="trailing" secondItem="txT-98-Hoh" secondAttribute="trailing" id="3dB-jU-06o"/>
+                            <constraint firstItem="txT-98-Hoh" firstAttribute="top" secondItem="hdD-Oa-BRf" secondAttribute="top" id="4j2-F1-RHR"/>
+                            <constraint firstItem="txT-98-Hoh" firstAttribute="leading" secondItem="hdD-Oa-BRf" secondAttribute="leading" id="htb-Mb-apW"/>
+                            <constraint firstItem="hdD-Oa-BRf" firstAttribute="bottom" secondItem="txT-98-Hoh" secondAttribute="bottom" id="pZX-3N-cbp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ttx-hM-TIX"/>
+                    <connections>
+                        <outlet property="favoritesTableView" destination="txT-98-Hoh" id="bza-7T-hRd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wyz-Vh-Lgi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2199" y="-621"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZFk-ot-61c">

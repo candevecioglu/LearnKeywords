@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UIViewController {
     
     var keywordBrain = KeywordBrain()
-
     @IBOutlet weak var categoryTableView: UITableView!
     
     override func viewDidLoad() {
@@ -21,6 +20,8 @@ class ViewController: UIViewController {
         
         self.title = "All Categories"
         
+        
+        
     }
 
 }
@@ -30,8 +31,14 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        keywordBrain.selectedCategory = keywordBrain.categoryArray[indexPath.row]
-        performSegue(withIdentifier: "goToChoice", sender: nil)
+        
+        if keywordBrain.categoryArray[indexPath.row] == "❤️ Favori Kelimelerin" {
+            performSegue(withIdentifier: "goToFavorites", sender: nil)
+        } else {
+            keywordBrain.selectedCategory = keywordBrain.categoryArray[indexPath.row]
+            performSegue(withIdentifier: "goToChoice", sender: nil)
+        }
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,7 +59,7 @@ extension ViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToChoice" {
-            let destinationVC = segue.destination as! CoiceViewController
+           let destinationVC = segue.destination as! CoiceViewController
             destinationVC.choosenCategory = keywordBrain.selectedCategory
         }
     }
