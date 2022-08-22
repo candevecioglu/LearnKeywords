@@ -13,14 +13,14 @@ struct Keyword: Codable {
     let englishKeyword : String
     let wrongAnswers   : [String]
     let turkishKeyword : String
-    #warning("I need UUID for Keyword objects")
-    //let identifier     : UUID
+    let identifier     : String
     
 
-    init(ct: String, en: String, wa: [String], tr: String) {
+    init(ct: String, en: String, wa: [String], tr: String, id: String) {
         category        = ct
         englishKeyword  = en
         wrongAnswers    = wa
         turkishKeyword  = tr
+        identifier      = id
     }
 }

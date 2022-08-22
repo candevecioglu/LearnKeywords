@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class LearnViewController: UIViewController {
     
@@ -30,13 +31,14 @@ class LearnViewController: UIViewController {
         
         updateUI()
         
+        
         }
     
     func updateUI () {
         
         englishLabel.text = selectedCategoryForLearnKeywords[keywordNumber].englishKeyword
         turkishLabel.text = selectedCategoryForLearnKeywords[keywordNumber].turkishKeyword
-        
+        print(selectedCategoryForLearnKeywords[keywordNumber].identifier)
     }
     
     //MARK: - Next and Back buttons
@@ -77,10 +79,32 @@ class LearnViewController: UIViewController {
         
     }
     
-
+    //MARK: - Add to favorites with CoreData and UUID
+    
+    @IBAction func addToFavorites(_ sender: UIButton) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let saveData = NSEntityDescription.insertNewObject(forEntityName: "Favorites", into: context)
+        
+        saveData.setValue(selectedCategoryForLearnKeywords[keywordNumber].identifier, forKey: "id")
+        saveData.setValue(selectedCategoryForLearnKeywords[keywordNumber].category, forKey: "category")
+        saveData.setValue(selectedCategoryForLearnKeywords[keywordNumber].englishKeyword, forKey: "englishKeyword")
+        saveData.setValue(selectedCategoryForLearnKeywords[keywordNumber].turkishKeyword, forKey: "turkishKeyword")
+        saveData.setValue(UUID(), forKey: "uuid")
+        
+        do {
+            try context.save()
+            print("Good job!")
+        } catch {
+            print("Context Error")
+        }
+        
+    }
+    
 }
 
-//MARK: - Navigation
+    //MARK: - Navigation
 
 extension LearnViewController {
     

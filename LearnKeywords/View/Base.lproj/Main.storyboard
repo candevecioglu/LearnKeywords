@@ -172,7 +172,7 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="rXv-Ov-7yF">
                                 <rect key="frame" x="51" y="688" width="312" height="4"/>
                             </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDn-Q1-oY4">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDn-Q1-oY4">
                                 <rect key="frame" x="85" y="243" width="244" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -222,17 +222,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mrj-Ti-jVC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2182.608695652174" y="670.3125"/>
+            <point key="canvasLocation" x="2070" y="248"/>
         </scene>
         <!--Learn View Controller-->
         <scene sceneID="QW6-nv-ciJ">
             <objects>
-                <viewController id="WeH-J8-4YM" customClass="LearnViewController" customModule="LearnKeywords" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="WeH-J8-4YM" customClass="LearnViewController" customModule="LearnKeywords" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xGD-If-Yro">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUb-OH-UfW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUb-OH-UfW">
                                 <rect key="frame" x="47" y="73" width="336" height="113"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -257,9 +257,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MA-ov-PcJ">
-                                <rect key="frame" x="47" y="528" width="136" height="54"/>
+                                <rect key="frame" x="47" y="570" width="110" height="54"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="136" id="tbz-Pe-i5i"/>
+                                    <constraint firstAttribute="width" constant="110" id="tbz-Pe-i5i"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="&lt; Back"/>
@@ -267,18 +267,18 @@
                                     <action selector="backButtonPressed:" destination="WeH-J8-4YM" eventType="touchUpInside" id="dIp-ef-G4x"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Okj-Yl-T6H">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Okj-Yl-T6H">
                                 <rect key="frame" x="47" y="182" width="336" height="4"/>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfr-O7-8Xl">
-                                <rect key="frame" x="247" y="528" width="136" height="54"/>
+                                <rect key="frame" x="273" y="570" width="110" height="54"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Next &gt;"/>
                                 <connections>
                                     <action selector="nextButtonPressed:" destination="WeH-J8-4YM" eventType="touchUpInside" id="ak2-wP-toT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oou-9a-TrO">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oou-9a-TrO">
                                 <rect key="frame" x="59" y="257" width="294" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -287,25 +287,35 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="PMQ-kk-DM2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbU-ew-fGV">
+                                <rect key="frame" x="113" y="691" width="189" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="heart" catalog="system" title=" Add to favorites"/>
+                                <connections>
+                                    <action selector="addToFavorites:" destination="WeH-J8-4YM" eventType="touchUpInside" id="Iei-Rl-jEA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KQa-BF-Yhn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="nUb-OH-UfW" firstAttribute="leading" secondItem="Okj-Yl-T6H" secondAttribute="leading" id="4Op-oz-tZi"/>
-                            <constraint firstItem="7MA-ov-PcJ" firstAttribute="top" secondItem="k7Y-Of-fD8" secondAttribute="bottom" constant="41" id="7Q8-Qh-2n3"/>
-                            <constraint firstItem="Okj-Yl-T6H" firstAttribute="top" secondItem="KQa-BF-Yhn" secondAttribute="top" constant="182" id="CGQ-YY-h4P"/>
+                            <constraint firstItem="7MA-ov-PcJ" firstAttribute="top" secondItem="k7Y-Of-fD8" secondAttribute="bottom" constant="83" id="7Q8-Qh-2n3"/>
+                            <constraint firstItem="Okj-Yl-T6H" firstAttribute="top" secondItem="KQa-BF-Yhn" secondAttribute="top" constant="138" id="CGQ-YY-h4P"/>
                             <constraint firstItem="Okj-Yl-T6H" firstAttribute="leading" secondItem="7MA-ov-PcJ" secondAttribute="leading" id="H50-zC-eOQ"/>
                             <constraint firstItem="KQa-BF-Yhn" firstAttribute="trailing" secondItem="nUb-OH-UfW" secondAttribute="trailing" constant="31" id="MI1-bP-7Gd"/>
-                            <constraint firstItem="nUb-OH-UfW" firstAttribute="top" secondItem="KQa-BF-Yhn" secondAttribute="top" constant="73" id="RPn-yH-LLf"/>
+                            <constraint firstItem="nUb-OH-UfW" firstAttribute="top" secondItem="KQa-BF-Yhn" secondAttribute="top" constant="29" id="RPn-yH-LLf"/>
                             <constraint firstItem="nUb-OH-UfW" firstAttribute="trailing" secondItem="Okj-Yl-T6H" secondAttribute="trailing" id="SjU-PO-mJ2"/>
                             <constraint firstItem="7MA-ov-PcJ" firstAttribute="baseline" secondItem="Bfr-O7-8Xl" secondAttribute="baseline" id="UM8-EB-RAq"/>
                             <constraint firstItem="Okj-Yl-T6H" firstAttribute="trailing" secondItem="Bfr-O7-8Xl" secondAttribute="trailing" id="UcF-TZ-tPM"/>
                             <constraint firstItem="Okj-Yl-T6H" firstAttribute="bottom" secondItem="nUb-OH-UfW" secondAttribute="bottom" id="VL5-78-umE"/>
-                            <constraint firstItem="Bfr-O7-8Xl" firstAttribute="leading" secondItem="7MA-ov-PcJ" secondAttribute="trailing" constant="64" id="dbX-ev-ysT"/>
+                            <constraint firstItem="Bfr-O7-8Xl" firstAttribute="leading" secondItem="7MA-ov-PcJ" secondAttribute="trailing" constant="116" id="dbX-ev-ysT"/>
                             <constraint firstItem="nUb-OH-UfW" firstAttribute="leading" secondItem="KQa-BF-Yhn" secondAttribute="leading" constant="47" id="hZh-Xv-qkX"/>
                             <constraint firstItem="G9K-wB-46d" firstAttribute="leading" secondItem="KQa-BF-Yhn" secondAttribute="leading" constant="71" id="k57-aa-t6N"/>
                             <constraint firstItem="k7Y-Of-fD8" firstAttribute="top" secondItem="G9K-wB-46d" secondAttribute="bottom" constant="23" id="qEr-MP-jzQ"/>
-                            <constraint firstItem="KQa-BF-Yhn" firstAttribute="bottom" secondItem="7MA-ov-PcJ" secondAttribute="bottom" constant="226" id="qIu-7u-H75"/>
+                            <constraint firstItem="KQa-BF-Yhn" firstAttribute="bottom" secondItem="7MA-ov-PcJ" secondAttribute="bottom" constant="238" id="qIu-7u-H75"/>
                             <constraint firstItem="k7Y-Of-fD8" firstAttribute="leading" secondItem="KQa-BF-Yhn" secondAttribute="leading" constant="72" id="sAl-7k-7lB"/>
                             <constraint firstItem="KQa-BF-Yhn" firstAttribute="trailing" secondItem="G9K-wB-46d" secondAttribute="trailing" constant="73" id="xKe-sA-mAY"/>
                             <constraint firstItem="k7Y-Of-fD8" firstAttribute="centerX" secondItem="xGD-If-Yro" secondAttribute="centerX" id="zMs-5x-kDi"/>
@@ -325,7 +335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AEb-uJ-AW9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2198.5507246376815" y="36.830357142857139"/>
+            <point key="canvasLocation" x="2070" y="-480"/>
         </scene>
         <!--Favorites View Controller-->
         <scene sceneID="Ius-1B-8GW">
@@ -336,9 +346,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="txT-98-Hoh">
-                                <rect key="frame" x="0.0" y="44" width="414" height="798"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="606"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmo-JQ-CDR">
+                                <rect key="frame" x="121" y="674" width="173" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="questionmark.circle.fill" catalog="system" title=" Quiz with favorites!"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hdD-Oa-BRf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -346,7 +362,7 @@
                             <constraint firstItem="hdD-Oa-BRf" firstAttribute="trailing" secondItem="txT-98-Hoh" secondAttribute="trailing" id="3dB-jU-06o"/>
                             <constraint firstItem="txT-98-Hoh" firstAttribute="top" secondItem="hdD-Oa-BRf" secondAttribute="top" id="4j2-F1-RHR"/>
                             <constraint firstItem="txT-98-Hoh" firstAttribute="leading" secondItem="hdD-Oa-BRf" secondAttribute="leading" id="htb-Mb-apW"/>
-                            <constraint firstItem="hdD-Oa-BRf" firstAttribute="bottom" secondItem="txT-98-Hoh" secondAttribute="bottom" id="pZX-3N-cbp"/>
+                            <constraint firstItem="hdD-Oa-BRf" firstAttribute="bottom" secondItem="txT-98-Hoh" secondAttribute="bottom" constant="192" id="pZX-3N-cbp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ttx-hM-TIX"/>
@@ -356,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyz-Vh-Lgi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2199" y="-621"/>
+            <point key="canvasLocation" x="1235" y="972"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZFk-ot-61c">
@@ -378,10 +394,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tfu-cQ-Zke"/>
-        <segue reference="4Sm-Cx-Hjq"/>
+        <segue reference="CnA-t7-pg2"/>
+        <segue reference="PMQ-kk-DM2"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="questionmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
