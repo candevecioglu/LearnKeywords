@@ -87,6 +87,8 @@ class LearnViewController: UIViewController {
         let context = appDelegate.persistentContainer.viewContext
         let saveData = NSEntityDescription.insertNewObject(forEntityName: "Favorites", into: context)
         
+        #warning("It should be an array for decent data type")
+        
         saveData.setValue(selectedCategoryForLearnKeywords[keywordNumber].identifier, forKey: "id")
         saveData.setValue(selectedCategoryForLearnKeywords[keywordNumber].category, forKey: "category")
         saveData.setValue(selectedCategoryForLearnKeywords[keywordNumber].englishKeyword, forKey: "englishKeyword")
