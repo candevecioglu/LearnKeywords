@@ -10,27 +10,27 @@ import CoreData
 
 class LearnViewController: UIViewController {
     
-    var choosenCategory = String()
-    var keywordBrain = KeywordBrain()
-    var keywordNumber = 0
-    var selectedCategoryForLearnKeywords = Array<Keyword>()
+    var choosenCategory                     = String()
+    var keywordBrain                        = KeywordBrain()
+    var keywordNumber                       = 0
+    var selectedCategoryForLearnKeywords    = Array<Keyword>()
 
-    @IBOutlet weak var categoryNameLabel: UILabel!
-    @IBOutlet weak var englishLabel: UILabel!
-    @IBOutlet weak var turkishLabel: UILabel!
-    @IBOutlet weak var backButtonLabel: UIButton!
-    @IBOutlet weak var nextButtonLabel: UIButton!
-    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var categoryNameLabel    : UILabel!
+    @IBOutlet weak var englishLabel         : UILabel!
+    @IBOutlet weak var turkishLabel         : UILabel!
+    @IBOutlet weak var backButtonLabel      : UIButton!
+    @IBOutlet weak var nextButtonLabel      : UIButton!
+    @IBOutlet weak var progressBar          : UIProgressView!
+    @IBOutlet weak var goToMainPage         : UIButton!
     
-    @IBOutlet weak var goToMainPage: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        goToMainPage.isHidden = true
-        self.title = "Learn Keywords"
+        
+        goToMainPage.isHidden  = true
+        self.title             = "Learn Keywords"
         categoryNameLabel.text = choosenCategory
         
         updateUI()
-        
         
         }
     
@@ -39,6 +39,7 @@ class LearnViewController: UIViewController {
         englishLabel.text = selectedCategoryForLearnKeywords[keywordNumber].englishKeyword
         turkishLabel.text = selectedCategoryForLearnKeywords[keywordNumber].turkishKeyword
         print(selectedCategoryForLearnKeywords[keywordNumber].identifier)
+        
     }
     
     //MARK: - Next and Back buttons
@@ -52,12 +53,12 @@ class LearnViewController: UIViewController {
             let barLoading = selectedCategoryForLearnKeywords.count - 1
             progressBar.progress = Float(keywordNumber) / Float(barLoading)
         } else {
-            englishLabel.isHidden = true
-            turkishLabel.isHidden = true
-            progressBar.isHidden = true
-            nextButtonLabel.isHidden = true
-            backButtonLabel.isHidden = true
-            goToMainPage.isHidden = false
+            englishLabel.isHidden       = true
+            turkishLabel.isHidden       = true
+            progressBar.isHidden        = true
+            nextButtonLabel.isHidden    = true
+            backButtonLabel.isHidden    = true
+            goToMainPage.isHidden       = false
         }
         
         
@@ -82,7 +83,7 @@ class LearnViewController: UIViewController {
     //MARK: - Add to favorites with CoreData and UUID
     
     @IBAction func addToFavorites(_ sender: UIButton) {
-        
+    
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let saveData = NSEntityDescription.insertNewObject(forEntityName: "Favorites", into: context)
@@ -97,7 +98,10 @@ class LearnViewController: UIViewController {
         
         do {
             try context.save()
-            print("Good job!")
+            print("Bu güzellik değil facia!")
+
+            
+            
         } catch {
             print("Context Error")
         }

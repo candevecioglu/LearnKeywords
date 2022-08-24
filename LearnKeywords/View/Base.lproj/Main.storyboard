@@ -348,12 +348,45 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="txT-98-Hoh">
                                 <rect key="frame" x="0.0" y="44" width="414" height="606"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoriteCell" rowHeight="78" id="LYG-tk-CZX" customClass="FavoriteCell" customModule="LearnKeywords" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="78"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LYG-tk-CZX" id="CvB-f0-jqu" customClass="FavoriteCell" customModule="LearnKeywords" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="78"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="English Keyword" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cab-bD-g9h">
+                                                    <rect key="frame" x="20" y="11" width="287" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Turkish Keyword" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlT-Ar-TTy">
+                                                    <rect key="frame" x="20" y="46" width="287" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="englishKeywordLabel" destination="cab-bD-g9h" id="xvW-7g-PTn"/>
+                                            <outlet property="turkishKeywordLabel" destination="YlT-Ar-TTy" id="Vi7-Pl-l4J"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmo-JQ-CDR">
                                 <rect key="frame" x="121" y="674" width="173" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="questionmark.circle.fill" catalog="system" title=" Quiz with favorites!"/>
+                                <connections>
+                                    <segue destination="cPa-o3-A4k" kind="show" id="RdY-Au-4ka"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hdD-Oa-BRf"/>
@@ -372,7 +405,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyz-Vh-Lgi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1235" y="972"/>
+            <point key="canvasLocation" x="1234.7826086956522" y="971.65178571428567"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Fkn-HV-lDu">
+            <objects>
+                <viewController id="cPa-o3-A4k" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ISL-RZ-Fyv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7Ze-ff-fiC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4D3-Px-sHD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EjP-z5-HAB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2070" y="972"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZFk-ot-61c">
