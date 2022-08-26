@@ -12,6 +12,7 @@
 		403AEB8D28A7E08D00BF7C54 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403AEB8C28A7E08D00BF7C54 /* QuizViewController.swift */; };
 		4081692328B6C13F001276F0 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4081692228B6C13F001276F0 /* FavoriteCell.swift */; };
 		408FC1E828A844FA0076A307 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC1E728A844FA0076A307 /* FavoritesViewController.swift */; };
+		40C1977428B9497800A84E27 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C1977328B9497800A84E27 /* Favorite.swift */; };
 		40DBEE4628A7B164007055A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBEE4528A7B164007055A2 /* AppDelegate.swift */; };
 		40DBEE4828A7B164007055A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBEE4728A7B164007055A2 /* SceneDelegate.swift */; };
 		40DBEE4A28A7B164007055A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBEE4928A7B164007055A2 /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 		403AEB8C28A7E08D00BF7C54 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		4081692228B6C13F001276F0 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		408FC1E728A844FA0076A307 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		40C1977328B9497800A84E27 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		40DBEE4228A7B164007055A2 /* LearnKeywords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnKeywords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DBEE4528A7B164007055A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40DBEE4728A7B164007055A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				40DBEE5C28A7B47A007055A2 /* KeywordBrain.swift */,
 				40DBEE5E28A7B4C6007055A2 /* Keyword.swift */,
+				40C1977328B9497800A84E27 /* Favorite.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			files = (
 				403AEB8928A7C4E100BF7C54 /* LearnViewController.swift in Sources */,
 				40DBEE5D28A7B47A007055A2 /* KeywordBrain.swift in Sources */,
+				40C1977428B9497800A84E27 /* Favorite.swift in Sources */,
 				40DBEE5F28A7B4C6007055A2 /* Keyword.swift in Sources */,
 				40DBEE5028A7B164007055A2 /* LearnKeywords.xcdatamodeld in Sources */,
 				40DBEE4A28A7B164007055A2 /* ViewController.swift in Sources */,

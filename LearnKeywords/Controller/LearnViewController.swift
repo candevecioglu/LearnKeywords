@@ -94,11 +94,12 @@ class LearnViewController: UIViewController {
         saveData.setValue(selectedCategoryForLearnKeywords[keywordNumber].category, forKey: "category")
         saveData.setValue(selectedCategoryForLearnKeywords[keywordNumber].englishKeyword, forKey: "englishKeyword")
         saveData.setValue(selectedCategoryForLearnKeywords[keywordNumber].turkishKeyword, forKey: "turkishKeyword")
+        saveData.setValue(Date(), forKey: "date")
         saveData.setValue(UUID(), forKey: "uuid")
         
         do {
             try context.save()
-            print("Bu güzellik değil facia!")
+            print("Kaydedildi")
 
             
             
