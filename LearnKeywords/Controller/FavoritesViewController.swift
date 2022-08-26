@@ -12,6 +12,8 @@ class FavoritesViewController: UIViewController {
     
     var favoriteArray : Array<Favorite> = []
     
+    
+    
     var categoryArray = [String()]
     var idArray = [String()]
     var dateArray = [Date()]
@@ -41,13 +43,13 @@ class FavoritesViewController: UIViewController {
 extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return idArray.count
+            return favoriteArray.count
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = favoritesTableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as! FavoriteCell
-            cell.englishKeywordLabel.text = categoryArray[indexPath.row] // Core Data
-            cell.turkishKeywordLabel.text = idArray[indexPath.row] // Core Data
+            cell.englishKeywordLabel.text = favoriteArray[indexPath.row].favoriteEnglishKeyword // Core Data
+            cell.turkishKeywordLabel.text = favoriteArray[indexPath.row].favoriteTurkishKeyword // Core Data
             return cell
         }
     
@@ -55,7 +57,23 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
         return 80
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+      if editingStyle == .delete {
+          
+          self.favoriteArray.remove(at: indexPath.row) // Delete from static array
+          favoritesTableView.reloadData()
+      }
+        
+
+        
+    }
+    
+    
+
+    
     func getKeyword () {
+        
+        self.favoriteArray.removeAll(keepingCapacity: true)
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -66,22 +84,16 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
             let results = try context.fetch(fetchRequest)
             
             for result in results as! [NSManagedObject] {
-                if let name = result.value(forKey: "category") as? String {
-                    self.categoryArray.append(name)
-                }
                 
-                if let id = result.value(forKey: "id") as? String {
-                    self.idArray.append(id)
-                    
+                if let favEN = result.value(forKey: "englishKeyword") as? String,
+                    let favTR = result.value(forKey: "turkishKeyword") as? String,
+                    let favID = result.value(forKey: "id") as? String {
+                    self.favoriteArray.append(Favorite(favEN: favEN, favTR: favTR, favID: favID))
                 }
-                
-                if let date = result.value(forKey: "date") as? Date {
-                    self.dateArray.append(date)
-                    
-                }
+            
             }
             
-            print(dateArray)
+            print(favoriteArray)
             
         } catch {
             
